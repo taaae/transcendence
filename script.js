@@ -6,12 +6,13 @@ function drawGame() {
     ctx.fillStyle = 'white';
     drawLeftPaddle();
     drawRightPaddle();
+    drawBall();
     ctx.stroke();
 }
 
 function animate() {
-    canvas.width = GameConfig.field.width;
-    canvas.height = GameConfig.field.height;
+    canvas.width = Game.field.width;
+    canvas.height = Game.field.height;
     const scaleFactor = Math.min(window.innerWidth / canvas.width, window.innerHeight / canvas.height);
     canvas.style.width = `${canvas.width * scaleFactor}px`;
     canvas.style.height = `${canvas.height * scaleFactor}px`;
