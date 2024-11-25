@@ -1,7 +1,12 @@
-#gamecanvas {
+* {
+    box-sizing: border-box;
+}
+
+#canvas {
     position: absolute;
-    height: 80%;
-    width: 90%;
-    left: 5%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     background-color: black;
 }
