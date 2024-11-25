@@ -21,7 +21,36 @@ function animate() {
     drawGame();
 }
 
+function addKeyListeners() {
+    document.addEventListener('keydown', (e) => {
+        if (e.code === "ArrowUp") {
+            Game.paddle.right.movingDown = false;
+            Game.paddle.right.movingUp = true;
+        }
+        if (e.code === "ArrowDown") {
+            Game.paddle.right.movingDown = true;
+            Game.paddle.right.movingUp = false;
+        }
+        if (e.code === "KeyW") {
+            Game.paddle.left.movingDown = false;
+            Game.paddle.left.movingUp = true;
+        }
+        if (e.code === "KeyS") {
+            Game.paddle.left.movingDown = true;
+            Game.paddle.left.movingUp = false;
+        }
+    });
+    document.addEventListener('keyup', (e) => {
+        if (e.code === "ArrowUp")    Game.paddle.right.movingUp = false;
+        if (e.code === "ArrowDown")    Game.paddle.right.movingDown = false;
+        if (e.code === "KeyW")    Game.paddle.left.movingUp = false;
+        if (e.code === "KeyS")    Game.paddle.left.movingDown = false;
+    });
+}
+
 window.onload = () => {
+    addKeyListeners();
     window.addEventListener('resize', animate);
-    setInterval(animate, 1000/30);
+    setInterval(updateGame, 1000/60);
+    setInterval(animate, 1000/60);
 }

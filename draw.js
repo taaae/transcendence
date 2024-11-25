@@ -1,7 +1,7 @@
 function drawLeftPaddle() {
     ctx.beginPath();
-    ctx.rect(Game.paddle.leftX, 
-        Game.paddle.leftY, 
+    ctx.rect(Game.paddle.left.X, 
+        Game.paddle.left.Y, 
         Game.paddle.width,
         Game.paddle.height);
     ctx.fill();
@@ -9,8 +9,8 @@ function drawLeftPaddle() {
 
 function drawRightPaddle() {
     ctx.beginPath();
-    ctx.rect(Game.paddle.rightX, 
-        Game.paddle.rightY, 
+    ctx.rect(Game.paddle.right.X, 
+        Game.paddle.right.Y, 
         Game.paddle.width,
         Game.paddle.height);
     ctx.fill();
@@ -18,6 +18,6 @@ function drawRightPaddle() {
 
 function drawBall() {
     ctx.beginPath();
-    ctx.arc(Game.ball.X, Game.ball.Y, Game.ball.radius, 0, 2 * Math.PI);
+    ctx.rect(Game.ball.X, Game.ball.Y, Game.ball.size, Game.ball.size);
     ctx.fill();
 }
